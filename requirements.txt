@@ -1,0 +1,9 @@
+asana
+discord
+flask
+flask_cors
+pymysql
+wheel
+requests
+asyncio
+tinydb

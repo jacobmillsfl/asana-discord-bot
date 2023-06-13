@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  tafasanabot:
+    container_name: taf-asana-bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 8081:5000
+    env_file:
+      - .env
