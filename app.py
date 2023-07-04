@@ -261,4 +261,10 @@ async def handle_task(event: Event):
         text="- TAFBot"
     )
 
+    embed.add_field(
+         name = "Assigned To",
+         value = task.assignee.name if task.assignee else "Unassigned",
+         inline = False
+    )
+
     discord_client.send_embed(embed.to_dict())

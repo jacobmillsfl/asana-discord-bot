@@ -13,19 +13,16 @@ class Story:
 
 class User:
     def __init__(self, user_data):
-        if 'email' in user_data:
-            self.gid = user_data.get('gid')
-            self.email = user_data.get('email')
-            self.name = user_data.get('name')
-            self.photo = Photo(user_data.get('photo'))
-            self.resource_type = user_data.get('resource_type')
-            self.workspaces = []
-            if 'workspaces' in user_data:
-                for workspace_data in user_data.get('workspaces'):
-                    self.workspaces.append(Workspace(workspace_data))
-        else:
-            self.gid = user_data.get('gid')
-            self.resource_type = user_data.get('resource_type')
+        self.gid = user_data.get('gid')
+        self.email = user_data.get('email')
+        self.name = user_data.get('name')
+        self.photo = Photo(user_data.get('photo'))
+        self.resource_type = user_data.get('resource_type')
+        self.workspaces = []
+        if 'workspaces' in user_data:
+            for workspace_data in user_data.get('workspaces'):
+                self.workspaces.append(Workspace(workspace_data))
+
 
 class Photo:
     def __init__(self, photo_data):
